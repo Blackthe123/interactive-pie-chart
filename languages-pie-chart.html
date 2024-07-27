@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <canvas id="myChart"></canvas>
+
+  <script>
+    // Data
+    var data = {
+      labels: ['French', 'Lingala', 'Swahili', 'Kikongo', 'Tshiluba', 'Luba-Shaba', 'Ngala', 'Songe'],
+      datasets: [{
+        data: [44780000, 8060000, 8960000, 1790000, 5370000, 896000, 2960000, 896000],
+        backgroundColor: [
+          '#FF6384',
+          '#36A2EB',
+          '#FFCE56',
+          '#FF9F40',
+          '#9966FF',
+          '#FF99CC',
+          '#33CCCC',
+          '#FF6666'
+        ]
+      }]
+    };
+
+    // Options
+    var options = {
+      responsive: true,
+      maintainAspectRatio: false
+    };
+
+    // Create chart
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myPieChart = new Chart(ctx, {
+      type: 'pie',
+      data: data,
+      options: options
+    });
+  </script>
+</body>
+</html>
